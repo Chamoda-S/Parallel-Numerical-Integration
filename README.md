@@ -55,5 +55,19 @@ Next steps you might want me to do:
 - Add unit tests to validate accuracy vs analytic integrals.
 - Add a small Python script to run benchmarks and plot speedup.
 - Implement a CUDA version (if you want GPU comparison).
+
+Benchmarks and tests
+--------------------
+
+- A simple benchmark harness is available at `bench/benchmark.py`. It runs the `bin/serial`, `bin/openmp` and `bin/mpi` binaries (if present), measures execution time over several repeats and writes `bench/results.csv`.
+- Basic accuracy tests are in `tests/test_accuracy.py` and use the `serial` binary to validate numeric output against analytic integrals. Run them with `pytest` or directly via Python.
+
+Examples (after building):
+
+```powershell
+python bench/benchmark.py --n 2000000 --repeats 3
+python -m pytest tests/test_accuracy.py
+```
+
 # Parallel-Numerical-Integration
 A comparative implementation of the Trapezoidal Rule in serial, OpenMP, MPI and CUDA. Demonstrates how numerical integration can be accelerated through parallelism across multicore CPUs, distributed systems and GPUs. Includes performance analysis, code samples and execution instructions.
