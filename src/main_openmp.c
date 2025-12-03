@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 #ifdef _OPENMP
-#include <omp.h>
+#include<omp.h>
 #endif
 #include "../include/trapezoid.h"
 

@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <mpi.h>
-#include "../include/trapezoid.h"
+#include<stdio.h>
+#include<stdlib.h>
+#include<mpi.h>
+#include"../include/trapezoid.h"
 
 int main(int argc, char **argv) {
     MPI_Init(&argc, &argv);

@@ -1,11 +1,11 @@
-#include "../include/trapezoid.h"
-#include <math.h>
-#include <time.h>
-#include <stdlib.h>
+#include"../include/trapezoid.h"
+#include<math.h>
+#include<time.h>
+#include<stdlib.h>
 #ifdef _OPENMP
-#include <omp.h>
+#include<omp.h>
 #endif
-
+    
 double func_eval(int func_id, double x) {
     switch (func_id) {
         case 0: return sin(x);
