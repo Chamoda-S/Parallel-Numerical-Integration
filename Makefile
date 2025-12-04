@@ -27,6 +27,10 @@ $(BINDIR)/openmp: $(SRCDIR)/main_openmp.c $(SRCDIR)/trapezoid.c | $(BINDIR)
 $(BINDIR)/mpi: $(SRCDIR)/main_mpi.c $(SRCDIR)/trapezoid.c | $(BINDIR)
 	$(MPICC) $(CFLAGS) $^ $(LIBS) -o $@
 
+$(BINDIR)/cuda: src/trapezoid_cuda.cu | $(BINDIR)
+	@echo "Building CUDA demo with nvcc..."
+	nvcc -O2 $^ -Iinclude -o $@
+
 clean:
 	rm -f $(BINDIR)/serial $(BINDIR)/openmp $(BINDIR)/mpi
 
